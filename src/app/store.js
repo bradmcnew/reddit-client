@@ -1,6 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-// import slice
+import postsReducer from '../features/posts/postsSlice';
 
+const rootReducer = combineReducers({
+    posts: postsReducer
+});
+const store = configureStore({
+    reducer: rootReducer
+});
 
-const reducers = { };
-export const store = configureStore(combineReducers(reducers));
+export default store;

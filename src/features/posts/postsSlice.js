@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getSubredditPosts } from "../../api/redditApi";
 
-const fetchPosts = createAsyncThunk(
+export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
     async (subreddit, thunkAPI) => {
         try {
@@ -32,9 +32,15 @@ const postsOptions = {
             })
             .addCase(fetchPosts.rejected, (state, action) => {
                 state.status = 'failed';
-                state.error = action.error.message;
+                state.error = action.payload;
             })
     }
 };
 
 const postsSlice = createSlice(postsOptions);
+
+export const selectPosts = state => state.posts.posts;
+export const selectPostsStatus = state => state.posts.status;
+export const selectPostsError = state => state.posts.error;
+
+export default postsSlice.reducer;
