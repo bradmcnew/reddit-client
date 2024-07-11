@@ -1,21 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function Post({ post, video, image, handleImgError }) {
+export default function Post({ post, video, image }) {
+    const [isVideoSupported, setIsVideoSupported] = useState(true);
+    const [isImageSupported, setIsImageSupported] = useState(true);
+    const handleVideoError = () => {
+        setIsVideoSupported(false);
+    };
+    const handleImageError = () => {
+        setIsImageSupported(false);
+    };
+
     return (
         <div key={post.id}>
             <h3>{post.title}</h3>
             <p>{post.selftext}</p>
-            {video ? (
-                <video src={video} controls>
+            {(video && isVideoSupported) && (
+                <video src={video} onError={handleVideoError} controls>
                     Video not supported.
                 </video>
-            ) : (
-                <p>No video Available</p>
             )}
-            {image ? (
-                <img src={image} alt={post.id + 'image'} onError={handleImgError} />
-            ) : (
-                <p>No image Available</p>
+            {(image && isImageSupported) && (
+                <img src={image} alt={post.id + 'image'} onError={handleImageError} />
             )}
         </div>
     );

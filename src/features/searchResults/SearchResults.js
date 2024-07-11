@@ -21,9 +21,6 @@ export function SearchResults ({subreddit}) {
     if (status === 'failed') {
         return <div>Error: {error}</div>
     }
-    const handleImgError = (event) => {
-        event.target.alt = 'Image not supported';
-    }
     return (
         <div>
             {console.log(posts)}
@@ -35,7 +32,7 @@ export function SearchResults ({subreddit}) {
                 console.log(`Img Url: ${imgUrl}`);
                 //<Post key={post.id} post={post}/>
                 return (
-                    <Post post={post} video={videoUrl} image={imgUrl} handleImgError={handleImgError}/>
+                    <Post post={post} video={videoUrl} image={imgUrl} />
                 );
             })}
         </div>
