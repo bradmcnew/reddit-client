@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPosts, selectPosts, selectPostsStatus, selectPostsError } from "./searchResultsSlice";
+import Post from "./Post";
 
 export function SearchResults ({subreddit}) {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ export function SearchResults ({subreddit}) {
         if (subreddit) {
             dispatch(fetchPosts(subreddit));
         }
-    }, [subreddit]);
+    }, [subreddit, dispatch]);
     if (status ==='loading') {
         return <div>Loading...</div>
     }
@@ -34,22 +35,7 @@ export function SearchResults ({subreddit}) {
                 console.log(`Img Url: ${imgUrl}`);
                 //<Post key={post.id} post={post}/>
                 return (
-                    <div key={post.id}>
-                        <h3>{post.title}</h3>
-                        <p>{post.selftext}</p>
-                        {videoUrl ? (
-                            <video src={videoUrl} controls>
-                                Video not supported.
-                            </video>
-                        ) : (
-                            <p>No video Available</p>
-                        )}
-                        {imgUrl ? (
-                            <img src={imgUrl} alt={post.id + 'image'} onError={handleImgError}/>
-                        ) : (
-                            <p>No image Available</p>
-                        )}
-                    </div>
+                    <Post post={post} video={videoUrl} image={imgUrl} handleImgError={handleImgError}/>
                 );
             })}
         </div>

@@ -4,7 +4,7 @@ import { SearchResults } from "../searchResults/SearchResults";
 import { getSubredditPosts } from "../../api/redditApi";
 
 export function SearchPage () {
-    const [searchQuery, setSearchQuery] = useState('');
+    const [searchQuery, setSearchQuery] = useState('MadeMeSmile');
 
     const handleChange = (event) => {
         setSearchQuery(event.target.value);
