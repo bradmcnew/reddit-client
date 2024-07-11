@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPosts, selectPosts, selectPostsStatus, selectPostsError } from "./postsSlice";
+import { fetchPosts, selectPosts, selectPostsStatus, selectPostsError } from "./searchResultsSlice";
 
-export default function Posts ({subreddit}) {
+export function SearchResults ({subreddit}) {
     const dispatch = useDispatch();
     const posts = useSelector(selectPosts);
     const status = useSelector(selectPostsStatus);
@@ -10,10 +10,10 @@ export default function Posts ({subreddit}) {
     
     /* iterate through posts array created by postsSlice and pass props to <Post /> */
     useEffect(() => {
-        if (status === 'idle') {
+        if (subreddit) {
             dispatch(fetchPosts(subreddit));
         }
-    }, [dispatch, status, subreddit]);
+    }, [subreddit]);
     if (status ==='loading') {
         return <div>Loading...</div>
     }
@@ -26,11 +26,12 @@ export default function Posts ({subreddit}) {
     return (
         <div>
             {console.log(posts)}
-            {posts.filter(post => post.kind !== 't3').map(post => {
+            {posts.map(post => {
                 const videoUrl = post.secure_media?.reddit_video?.fallback_url;
                 const imgUrl = post.thumbnail;
                 console.log(`Rendering post with id: ${post.id}`);
                 console.log(`Video Url: ${videoUrl}`);
+                console.log(`Img Url: ${imgUrl}`);
                 //<Post key={post.id} post={post}/>
                 return (
                     <div key={post.id}>
