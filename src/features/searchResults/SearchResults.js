@@ -28,7 +28,7 @@ export function SearchResults ({subreddit}) {
             {console.log(posts)}
             {posts.map(post => {
                 const videoUrl = post.secure_media?.reddit_video?.fallback_url;
-                const imgUrl = post.thumbnail;
+                const imgUrl = post.thumbnail || post.url_overridden_by_dest;
                 console.log(`Rendering post with id: ${post.id}`);
                 console.log(`Video Url: ${videoUrl}`);
                 console.log(`Img Url: ${imgUrl}`);
