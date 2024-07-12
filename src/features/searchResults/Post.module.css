@@ -65,3 +65,88 @@
     border-radius: 100%;
     text-decoration: underline;
 }
+
+@media only screen and (max-width: 2100px) {
+    .post {
+        width: 30%;
+    }
+    .postImage {
+        height: auto;
+        overflow: scroll;
+    }
+    .body {
+        height: 20%
+    }
+    .crosspost .postImage {
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .post {
+        width: 40%;
+    }
+    .postImage {
+        height: auto;
+        overflow: scroll;
+    }
+    .body {
+        height: 20%
+    }
+    .crosspost .postImage {
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .post {
+        width: 60%;
+    }
+    .postImage {
+        height: auto;
+        overflow: scroll;
+    }
+    .body {
+        height: 20%
+    }
+    .crosspost .postImage {
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .post {
+        width: 80%;
+    }
+    .postImage {
+        height: auto;
+        overflow: scroll;
+    }
+    .body {
+        height: 20%
+    }
+    .crosspost .postImage {
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .post {
+        width: 95%;
+    }
+    .postImage {
+        height: auto;
+        overflow: scroll;
+    }
+    .body {
+        height: 20%
+    }
+    .crosspost .postImage {
+        height: auto;
+        overflow: hidden;
+    }
+}
