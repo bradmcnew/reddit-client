@@ -1,0 +1,31 @@
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  label {
+    font-size: 1.2em;
+    margin-right: 10px;
+  }
+  
+  input[type="search"] {
+    padding: 8px;
+    font-size: 1em;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    max-width: 100%;
+    color: navy
+  }
+  
+  input[type="search"]:focus {
+    outline: none;
+    border-color: red;
+    box-shadow: 0 0 5px lightpink;
+  }
+  .navy {
+    color: navy;
+  }
