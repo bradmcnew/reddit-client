@@ -21,14 +21,16 @@ export function SearchResults ({subreddit}) {
     if (status === 'failed') {
         return <div>Error: {error}</div>
     }
+    const getImageUrl = (post) => {
+        return post.url_overridden_by_dest || post.thumbnail;
+    }
     return (
         <div>
             {console.log(posts)}
             {posts.map(post => {
-                const imgUrl = post.thumbnail || post.url_overridden_by_dest;
+                const imgUrl = getImageUrl(post);
                 console.log(`Rendering post with id: ${post.id}`);
                 console.log(`Img Url: ${imgUrl}`);
-                //<Post key={post.id} post={post}/>
                 return (
                     <Post post={post} image={imgUrl} />
                 );

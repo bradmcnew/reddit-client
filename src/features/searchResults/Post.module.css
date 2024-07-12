@@ -1,0 +1,67 @@
+.post {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem 0;
+  border: 0.2rem solid black;
+  width: 20%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+.title {
+  text-decoration: underline;
+  text-align: center;
+}
+
+.body {
+    position: relative;
+    bottom: 5.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: white;
+    font-size: 1.5em;
+    height: 3rem;
+    overflow: scroll;
+    padding: 0.5rem;
+    width: 87%;
+    text-align: center;
+}
+
+.crosspostTitle {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.postImage {
+    width: 90%;
+    height: auto;
+}
+
+.crosspost {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(205, 0 , 0, 0.6);
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+    align-items: center;
+    border: 0.2rem solid black;
+    width: 90%;
+}
+
+.crosspost .postImage {
+    width: 90%;
+}
+.crosspost p {
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.subreddit {
+    height: 2rem;
+    padding: 50%;
+    color: navy;
+    border-radius: 100%;
+    text-decoration: underline;
+}
