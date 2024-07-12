@@ -2,13 +2,18 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 35%;
     margin-top: 20px;
     flex-wrap: wrap;
+    padding: 2rem 0;
   }
   
   label {
+    color: white;
     font-size: 1.2em;
     margin-right: 10px;
+    font-weight: bold;
+    text-align: center;
   }
   
   input[type="search"] {
@@ -18,7 +23,8 @@ form {
     border-radius: 4px;
     width: 200px;
     max-width: 100%;
-    color: navy
+    min-width: 150px;
+    color: red;
   }
   
   input[type="search"]:focus {
@@ -27,5 +33,6 @@ form {
     box-shadow: 0 0 5px lightpink;
   }
   .navy {
-    color: navy;
+    color: red;
   }
+

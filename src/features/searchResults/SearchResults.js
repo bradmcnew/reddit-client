@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import styles from "./SearchResults.module.css"
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPosts, selectPosts, selectPostsStatus, selectPostsError } from "./searchResultsSlice";
 import Post from "./Post";
@@ -25,7 +26,7 @@ export function SearchResults ({subreddit}) {
         return post.url_overridden_by_dest || post.thumbnail;
     }
     return (
-        <div>
+        <div className={styles.body}>
             {console.log(posts)}
             {posts.map(post => {
                 const imgUrl = getImageUrl(post);
