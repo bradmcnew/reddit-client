@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { SearchForm } from "./SearchForm";
 import { SearchResults } from "../searchResults/SearchResults";
-import { getSubredditPosts } from "../../api/redditApi";
 
 export function SearchPage () {
     const [searchQuery, setSearchQuery] = useState('MadeMeSmile');

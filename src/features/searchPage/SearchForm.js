@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from './SearchForm.module.css';
 
 export function SearchForm ({ searchQuery, handleChange }) {

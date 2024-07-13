@@ -1,5 +1,3 @@
-import React from "react";
-
 export const rootApi = 'https://www.reddit.com';
 
 export const getSubredditPosts = async (subreddit) => {
