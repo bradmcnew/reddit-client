@@ -22,10 +22,10 @@ export default function Post({ post, image }) {
                             <p className={styles.subreddit}>r/{crosspostSubreddit}</p>
                             <h2 className={styles.crosspostTitle}>{crosspostTitle}</h2>
                             <p>{crosspostSelftext}</p>
-                            <img className={styles.postImage} src={image} alt={post.id + 'image'} onError={handleImageError} />
+                            <img className={styles.postImage} src={image} alt={post.id + 'image'} onError={handleImageError} loading="lazy" />
                         </div>
                     ) :
-                    <img className={styles.postImage} src={image} alt={post.id + 'image'} onError={handleImageError} />
+                    <img className={styles.postImage} src={image} alt={post.id + 'image'} onError={handleImageError} loading="lazy" />
                     }
                     {post.selftext && (<p className={styles.body}>{post.selftext}</p>)}
                 </div>
